@@ -1,18 +1,20 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="text-center !max-w-sm pt-5">
+    <h1 class="text-2xl">
+      User Todo List
+    </h1>
+    <div>
+      <v-text-field  :rules="rules"></v-text-field>
+    </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
 export default {
-  name: 'HomeView',
-  components: {
-    HelloWorld
-  }
+  data: () => ({
+    rules: [
+      value => !!value || 'Required.',
+    ],
+  }),
 }
 </script>
